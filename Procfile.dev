@@ -1,0 +1,2 @@
+tailwind: yarn run tailwind-watch
+jekyll: bundle exec jekyll serve -l
