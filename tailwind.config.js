@@ -9,6 +9,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {},
+    fontFamily: {
+      'sans': ['shabnam'],
+    }
   },
   variants: {},
   plugins: [

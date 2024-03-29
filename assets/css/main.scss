@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'shabnam';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/assets/fonts/Shabnam.woff) format('woff');
+  }
+
+  @font-face {
+    font-family: 'shabnam';
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/assets/fonts/Shabnam-Bold.woff) format('woff');
+  }
+}
