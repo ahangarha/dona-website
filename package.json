@@ -11,6 +11,7 @@
     "serve": "bundle exec jekyll serve",
     "live": "bundle exec jekyll serve -l",
     "tailwind-watch": "npx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main.css --watch",
-    "tailwind": "npx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main.css"
+    "tailwind": "npx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main.css",
+    "prod": "npx tailwindcss --minify -i ./assets/css/main.scss -o ./assets/css/main.css && bundle exec jekyll build -d public/"
   }
 }
