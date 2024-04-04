@@ -6,7 +6,19 @@
     <title>{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   </head>
-  <body class="bg-blue-100">
-    {{ content }}
+  <body class="w-screen h-screen min-h-screen container mx-auto bg-slate-50" dir="rtl">
+    <div class="flex flex-col gap-8 lg:flex-row items-center lg:p-16 md:overflow-hidden h-full">
+      <div class="bg-indigo-800 w-full lg:w-1/3 lg:rounded-xl h-full p-4 grid place-content-center text-white">
+        <svg class="h-36" fill="currentColor" viewBox="0 0 13.23 15.88" xmlns="http://www.w3.org/2000/svg">
+          <path d="M151.42 12.03v15.88h6.6v-3.95h-2.63v1.3h-1.32V12.03Zm3.97 0v2.65h2.65v-2.65zm3.97 0v2.65H162v10.58h-2.65v2.65h5.3V12.03ZM155.39 16v4.64h2.63v2l2.66-2.65V16z" transform="translate(-151.42 -12.03)"/>
+        </svg>
+      </div>
+
+      <main class="flex-grow lg:flex flex-col p-4">
+        <div class="prose">
+          {{ content }}
+        </div>
+      </main>
+    </div>
   </body>
 </html>
