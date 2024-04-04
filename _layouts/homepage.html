@@ -6,64 +6,37 @@
     <title>{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   </head>
-  <body class="bg-slate-100 min-h-screen" dir="rtl">
-    <main class="flex flex-col">
-      <div class="flex flex-col items-center gap-4 bg-gradient-to-br to-indigo-900 via-indigo-800 from-purple-900 py-32 px-4 text-lg text-white text-center">
-        <svg class="h-36 m-16" fill="currentColor" viewBox="0 0 13.23 15.88" xmlns="http://www.w3.org/2000/svg">
-          <path d="M151.42 12.03v15.88h6.6v-3.95h-2.63v1.3h-1.32V12.03Zm3.97 0v2.65h2.65v-2.65zm3.97 0v2.65H162v10.58h-2.65v2.65h5.3V12.03ZM155.39 16v4.64h2.63v2l2.66-2.65V16z" transform="translate(-151.42 -12.03)"/>
-        </svg>
-        <p class="max-w-xl">
-          دونا (دورهمی نرم‌افزار آزادی) تلاشی است برای آن که گرد هم بیاییم
-          و در راستار اهداف و ارزش‌های جنبش نرم‌افزار آزاد، دست به اقدام و عمل بزنیم.
-          دونا، به عنوان یک
-          <em>رویداد ریلاگی</em>
-          جایی است که در آن تصمیمات توسط
-          <em>افراد فعال</em>
-          گرفته می‌شود.
-        </p>
-        <p>
-          دونا، یک نام دخترانهٔ لری به معنای دانا است.
-        </p>
-      </div>
+  <body class="flex flex-col bg-slate-100 min-h-screen" dir="rtl">
+    <main class="flex flex-col justify-center flex-grow items-center gap-4 bg-gradient-to-br to-indigo-900 via-indigo-800 from-purple-900 px-4 text-lg text-white text-center">
+      <svg class="h-36 m-16" fill="currentColor" viewBox="0 0 13.23 15.88" xmlns="http://www.w3.org/2000/svg">
+        <path d="M151.42 12.03v15.88h6.6v-3.95h-2.63v1.3h-1.32V12.03Zm3.97 0v2.65h2.65v-2.65zm3.97 0v2.65H162v10.58h-2.65v2.65h5.3V12.03ZM155.39 16v4.64h2.63v2l2.66-2.65V16z" transform="translate(-151.42 -12.03)"/>
+      </svg>
+      <p class="max-w-xl">
+        دونا (دورهمی نرم‌افزار آزادی) تلاشی است برای آن که گرد هم بیاییم
+        و در راستار اهداف و ارزش‌های جنبش نرم‌افزار آزاد، دست به اقدام و عمل بزنیم.
+        دونا، به عنوان یک
+        <em>رویداد ریلاگی</em>
+        جایی است که در آن تصمیمات توسط
+        <em>افراد فعال</em>
+        گرفته می‌شود.
+      </p>
+      <p>
+        دونا، یک نام دخترانهٔ لری به معنای دانا است.
+      </p>
 
-      <div class="py-16 px-4">
-        <h2 class="text-center text-3xl my-8">جلسات</h2>
-
-        <div class="border p-4 bg-white rounded-lg prose mx-auto">
-          <h3>دونای ۱</h3>
-  
-          <p>به مناسبت روز آزادی مستندات</p>
-          
-          <h4>محورهای کلیدی جلسه:</h4>
-          <ul>
-            <li>انتشار مرام‌نامهٔ ریلاگ</li>
-            <li>معرفی دونا</li>
-            <li>گفتگو پیرامون آزادی مستندات و فراتر از آن</li>
-          </ul>
-
-          <h4>زمان و مکان</h4>
-          <p>
-            یک‌شنبه ۱۲ فروردین ۱۴۰۳
-            <br>
-            ساعت ۱۶
-            <br>
-            نشانی متعاقبا اعلام خواهد شد.
-          </p>
-        </div>
-      </div>
+      <nav class="border-t border-dotted mt-8 pt-8">
+        <ul class="list-none flex">
+          <li class="border-e">
+            <a href="/" class="p-4 underline hover:text-amber-500">خانه</a>
+          </li>
+          <li>
+            <a href="/events" class="p-4 underline hover:text-amber-500">نشست‌ها</a>
+          </li>
+        </ul>
+      </nav>
     </main>
 
-    <footer class="bg-slate-900 mt-32 pt-16 pb-8 text-slate-300 text-sm shadow-inner">
-      <div class="container mx-auto">
-        <p class="text-center">
-          کد منبع این وبگاه به صورت آزاد و تحت پروانهٔ AGPL
-          <a href="{{ site.repo_url }}" target="_blank" rel="noopener noreferrer" class="underline">
-            در این نشانی
-          </a>
-          در دسترس است.
-        </p>
-      </div>
-    </footer>
+    {% include footer.html %}
 
     <script>
       // Save scroll position
