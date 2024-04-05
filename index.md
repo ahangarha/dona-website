@@ -13,4 +13,10 @@ layout: homepage
 جمعه ۱۷ فروردین ۱۴۰۳ ساعت ۲۰:۰۰ 
 
 ### مکان
-مجازی (پیش از شروع اعلام خواهد شد)
+
+<a
+  href="https://vhall.scischool.ir/rooms/go8-ryx-o0b-0qy"
+  target="_blank"
+  class="bg-indigo-700 text-white px-4 py-2 rounded shadow no-underline hover:underline ">
+  اتاق بیگ‌بلوباتن
+</a>
