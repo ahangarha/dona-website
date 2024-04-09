@@ -10,7 +10,7 @@ title: event.title
   <h1>{{ page.title }}</h1>
 
   <div>
-    {{ page.event_date | date: "%Y/%m/%d" | to_persian_digit }}
+    {{ page.event_date | to_jalali: "%A %d %B %Y" | to_persian_digit }}
     ساعت
     {{ page.event_date | date: "%H:%M" | to_persian_digit }}
   </div>
