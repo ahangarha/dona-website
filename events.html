@@ -1,0 +1,57 @@
+---
+layout: index
+title: نشست‌ها
+---
+
+<div class="py-16 px-4 container mx-auto">
+  <h1 class="text-center text-4xl my-8">نشست‌های دونا</h1>
+
+  {% if site.events.size > 0 %}
+    {% assign events = site.events | reverse %}
+    <div>
+      {% for event in events %}
+        {% assign event_number = event.name | split:"." | first | to_persian_digit %}
+        
+        {% if event.featured == true %}
+          <div class="border-amber-400 border border-s-2 border-b-4 p-4 mx-auto mb-4 bg-white rounded-lg prose shadow">
+            <h3>
+              <a href="{{ event.url }}" class="no-underline font-bold">
+                {{ event_number }} - {{ event.title}}
+              </a>
+            </h3>
+            <div>
+              {{ event.event_date | date: "%Y/%m/%d" | to_persian_digit }}
+              ساعت
+              {{ event.event_date | date: "%H" | to_persian_digit }}
+            </div>
+            <small>
+              توسط:
+              <strong>{{ event.presenter | join: '، '}}</strong>
+            </small>
+            {{ event.content }}
+          </div>
+        {% else %}
+          <div class="border p-4 mx-auto mb-4 bg-white rounded-lg prose shadow">
+            <h3>
+              <a href="{{ event.url }}" class="no-underline font-bold">
+                {{ event_number }} - {{ event.title}}
+              </a>
+            </h3>
+            <div>
+              {{ event.event_date | date: "%Y/%m/%d" | to_persian_digit }}
+              ساعت
+              {{ event.event_date | date: "%H" | to_persian_digit }}
+            </div>
+            <small>
+              توسط:
+              <strong>{{ event.presenter | join: '، '}}</strong>
+            </small>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% else %}
+      <p class="text-center">نشستی موجود نیست</p>
+  {% endif %}
+</div>
+
