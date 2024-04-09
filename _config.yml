@@ -1,6 +1,21 @@
 url: ""
 baseurl: ""
-title: "دونا: دورهمی نرم‌افزار آزادی"
+title: "دونا"
+
+# Git Repo information
+repo_url: "https://framagit.org/dona/website"
 
 # plugins:
 #   - "jekyll-postcss"
+
+collections:
+  events:
+    output: true
+    permalink: /events/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "event"

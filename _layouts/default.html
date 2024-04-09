@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "fa-IR" }}">
+<html lang="{{ site.lang | default: 'fa-IR' }}">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   </head>
-  <body class="bg-red-200">
-    {{ content }}
+  <body class="bg-slate-100 min-h-screen" dir="rtl">
+    <nav>
+      navigation bar
+    </nav>
+
+    <main>
+      main content
+    </main>
+
+    <footer class="bg-slate-900 mt-32 pt-16 pb-8 text-slate-300 text-sm shadow-inner">
+      <div class="container mx-auto">
+        <p class="text-center">
+          کد منبع این وبگاه به صورت آزاد و تحت پروانهٔ AGPL
+          <a href="{{ site.repo_url }}" target="_blank" rel="noopener noreferrer" class="underline">
+            در این نشانی
+          </a>
+          در دسترس است.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Save scroll position
+      window.addEventListener('beforeunload', function() {
+        localStorage.setItem('scrollPosition', window.scrollY);
+      });
+      
+      // Restore scroll position
+      window.addEventListener('load', function() {
+        if (localStorage.getItem('scrollPosition')) {
+          window.scrollTo(0, localStorage.getItem('scrollPosition'));
+          localStorage.removeItem('scrollPosition');
+        }
+      });
+    </script>
   </body>
 </html>
