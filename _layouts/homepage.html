@@ -35,20 +35,5 @@
     </main>
 
     {% include footer.html %}
-
-    <script>
-      // Save scroll position
-      window.addEventListener('beforeunload', function() {
-        localStorage.setItem('scrollPosition', window.scrollY);
-      });
-      
-      // Restore scroll position
-      window.addEventListener('load', function() {
-        if (localStorage.getItem('scrollPosition')) {
-          window.scrollTo(0, localStorage.getItem('scrollPosition'));
-          localStorage.removeItem('scrollPosition');
-        }
-      });
-    </script>
   </body>
 </html>
