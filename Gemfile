@@ -12,6 +12,7 @@ gem 'base64', '~> 0.2.0'
 gem 'bigdecimal', '~> 3.1'
 gem 'csv', '~> 3.3'
 
+gem 'bidify', '~> 0.3.1'
 gem 'parsi-date', '~> 0.4.0'
 
 gem 'rubocop', '~> 1.63', group: :development

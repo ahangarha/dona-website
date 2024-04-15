@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'parsi-date'
+require 'bidify'
 
 module Jekyll
   # Set of utility methods for Persian language
@@ -28,6 +29,17 @@ module Jekyll
       jalali_date = input.to_parsi
 
       jalali_date.strftime(format)
+    end
+
+    #
+    # Modify the parsed html content to support bidirectional text
+    #
+    # @param content [String] The html content
+    #
+    # @return [String] Bidified html content
+    #
+    def bidify(content)
+      Bidify.bidify_html_string(content)
     end
   end
 end
