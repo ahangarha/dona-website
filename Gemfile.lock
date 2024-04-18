@@ -48,6 +48,8 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
+    jekyll-bidi (0.1.0)
+      bidify (~> 0.3.1)
     jekyll-postcss (0.5.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
@@ -169,10 +171,10 @@ PLATFORMS
 
 DEPENDENCIES
   base64 (~> 0.2.0)
-  bidify (~> 0.3.1)
   bigdecimal (~> 3.1)
   csv (~> 3.3)
   jekyll (~> 4.3)
+  jekyll-bidi (~> 0.1.0)
   jekyll-postcss (~> 0.5.0)
   parsi-date (~> 0.4.0)
   rubocop (~> 1.63)

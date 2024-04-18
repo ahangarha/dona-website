@@ -5,7 +5,8 @@ title: "دونا"
 # Git Repo information
 repo_url: "https://framagit.org/dona/website"
 
-# plugins:
+plugins:
+  - jekyll-bidi
 #   - "jekyll-postcss"
 
 collections:
