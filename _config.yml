@@ -12,6 +12,9 @@ collections:
   events:
     output: true
     permalink: /events/:path/
+  members:
+    output: true
+    permalink: /members/:path/
 
 defaults:
   - scope:
@@ -19,3 +22,8 @@ defaults:
       type: "events"
     values:
       layout: "event"
+  - scope:
+      path: ""
+      type: "members"
+    values:
+      layout: "member"

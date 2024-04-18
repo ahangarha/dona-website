@@ -1,0 +1,78 @@
+<div class="container mx-auto my-5 p-5">
+  <div class="md:flex no-wrap md:-mx-2 ">
+      <div class="w-full md:w-3/12 md:mx-2">
+          <div class="bg-white p-3 border-t-4">
+              <img class="rounded-full size-500 mx-auto" src="{{include.photo}}" alt="تصویر {{include.fullName}}">
+              <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1">{{include.fullName}}</h1>
+              <h3 class="text-gray-600 font-lg text-semibold text-center leading-6">{{include.skill}}</h3>
+              <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">{{include.bio}}</p>
+            <div class="container mx-auto">
+              <ul class="grid grid-cols-5 gap-1">
+                <li>
+                  <a href="{{include.website}}" class="p-4 inline-block hover:bg-slate-200" target="_blank">
+                    <svg class="h-4" version="1.0" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path d="M10.2 3.2C8.1 5.3 8.9 7 12 7s3.9-1.7 1.8-3.8c-1.5-1.5-2.1-1.5-3.6 0m-4.4.9C3.7 5.3 3.4 7 5.4 7c.7 0 1.6-.9 1.9-2s.4-2 .4-2c-.1 0-1 .5-1.9 1.1m10.9.9c.3 1.1 1.2 2 1.9 2 2 0 1.7-1.8-.5-2.9-1.6-.9-1.8-.8-1.4.9M2 12c0 2.3.4 3 2 3s2-.7 2-3-.4-3-2-3-2 .7-2 3m6 0c0 2.8.2 3 4 3s4-.2 4-3-.2-3-4-3-4 .2-4 3m10 0c0 2.3.4 3 2 3s2-.7 2-3-.4-3-2-3-2 .7-2 3M4 18c0 .5.9 1.4 1.9 1.9 1.6.9 1.8.8 1.4-.9-.5-2-3.3-2.9-3.3-1m5 .4c0 .7.7 2 1.6 2.7 1.4 1.1 1.8 1 3-.6 2.1-2.8 1.7-3.5-1.6-3.5-1.9 0-3 .5-3 1.4m7.7.6c-.4 1.7-.2 1.8 1.4.9 2.2-1.1 2.5-2.9.5-2.9-.7 0-1.6.9-1.9 2"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:{{include.email}}" class="p-4 inline-block hover:bg-slate-200" target="_blank">
+                    <svg class="h-4" version="1.0" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path d="M2.6 4.9c-.4.5 1.6 2.3 4.4 4l5 3.1 5-3.1c2.8-1.7 4.8-3.5 4.4-4-.7-1.2-18.1-1.2-18.8 0"/><path d="m2.2 13.7.3 5.8 9.3.3c10.4.3 10.5.3 10-7.1l-.3-4.6-4.8 2.9-4.7 3-3.8-2.3c-2-1.3-4.3-2.7-5-3.1-1-.6-1.2.5-1 5.1"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{include.mastodon}}" class="p-4 inline-block hover:bg-slate-200" target="_blank" rel="me">
+                    <svg class="h-4" fill="currentColor" viewBox="0 0 74 79" xmlns="http://www.w3.org/2000/svg"><path d="M73.701 17.96c-1.14-8.34-8.524-14.911-17.277-16.185C54.947 1.56 49.352.777 36.39.777h-.097c-12.965 0-15.746.783-17.223.998C10.56 3.013 2.789 8.918.903 17.356-.004 21.511-.1 26.118.068 30.344c.24 6.06.287 12.11.846 18.145a84 84 0 0 0 2.018 11.902c1.792 7.23 9.048 13.249 16.156 15.703a44 44 0 0 0 23.636 1.228 35 35 0 0 0 2.56-.688c1.903-.596 4.136-1.263 5.778-2.434a.18.18 0 0 0 .075-.14v-5.85a.17.17 0 0 0-.068-.133.18.18 0 0 0-.147-.032 66.5 66.5 0 0 1-15.338 1.764c-8.89 0-11.28-4.152-11.966-5.88a18 18 0 0 1-1.04-4.636.17.17 0 0 1 .064-.14.17.17 0 0 1 .152-.032 65.3 65.3 0 0 0 15.087 1.763c1.223 0 2.441 0 3.664-.031 5.111-.142 10.499-.399 15.528-1.366.125-.024.25-.045.358-.077 7.933-1.5 15.482-6.205 16.249-18.12.029-.47.1-4.914.1-5.401.004-1.654.542-11.736-.079-17.93M61.493 47.691H53.15V27.586c0-4.233-1.792-6.392-5.437-6.392-4.008 0-6.015 2.554-6.015 7.598v11.005h-8.291V28.792c0-5.044-2.011-7.598-6.019-7.598-3.624 0-5.434 2.159-5.437 6.392v20.106h-8.334V26.975q0-6.35 3.294-10.088c2.265-2.487 5.237-3.764 8.925-3.764 4.27 0 7.496 1.616 9.646 4.843l2.076 3.429 2.079-3.429c2.15-3.227 5.377-4.843 9.639-4.843 3.684 0 6.656 1.277 8.929 3.764Q61.5 20.622 61.5 26.975z" fill="inherit"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://matrix.to/#/{{include.matrix}}" class="p-4 inline-block hover:bg-slate-200" target="_blank">
+                    <svg class="h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520"><path d="M13.7 11.9v496.2h35.7V520H0V0h49.4v11.9zm152.6 157.3v25.1h.7c6.7-9.6 14.8-17 24.2-22.2 9.4-5.3 20.3-7.9 32.5-7.9 11.7 0 22.4 2.3 32.1 6.8s17 12.6 22.1 24c5.5-8.1 13-15.3 22.4-21.5s20.6-9.3 33.5-9.3q14.7 0 27.3 3.6c8.4 2.4 15.5 6.2 21.5 11.5s10.6 12.1 14 20.6c3.3 8.5 5 18.7 5 30.7v124.1h-50.9V249.6c0-6.2-.2-12.1-.7-17.6s-1.8-10.3-3.9-14.3c-2.2-4.1-5.3-7.3-9.5-9.7s-9.9-3.6-17-3.6c-7.2 0-13 1.4-17.4 4.1-4.4 2.8-7.9 6.3-10.4 10.8-2.5 4.4-4.2 9.4-5 15.1-.8 5.6-1.3 11.3-1.3 17v103.3h-50.9v-104c0-5.5-.1-10.9-.4-16.3-.2-5.4-1.3-10.3-3.1-14.9-1.8-4.5-4.8-8.2-9-10.9s-10.3-4.1-18.5-4.1c-2.4 0-5.6.5-9.5 1.6s-7.8 3.1-11.5 6.1-6.9 7.3-9.5 12.9-3.9 13-3.9 22.1v107.6h-50.9V169.2zm340 338.9V11.9h-35.7V0H520v520h-49.4v-11.9z"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://framagit.org/{{include.framagit}}" class="p-4 inline-block hover:bg-slate-200" target="_blank">
+                    <svg class="h-4" fill="currentColor" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg"><path d="m23.95 13.59-1.34-4.14-2.66-8.19a.45.45 0 0 0-.87 0l-2.66 8.19H7.58L4.92 1.26c-.14-.42-.74-.42-.87 0L1.39 9.45.04 13.59c-.12.37.02.79.34 1.02L12 23.05l11.63-8.44a.92.92 0 0 0 .32-1.02"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/{{include.github}}" class="p-4 inline-block hover:bg-slate-200" target="_blank">
+                    <svg class="h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.9 2.1c-4.6.5-8.3 4.2-8.8 8.7-.5 4.7 2.2 8.9 6.3 10.5.3.1.6-.1.6-.5v-1.6s-.4.1-.9.1c-1.4 0-2-1.2-2.1-1.9-.1-.4-.3-.7-.6-1-.3-.1-.4-.1-.4-.2 0-.2.3-.2.4-.2.6 0 1.1.7 1.3 1 .5.8 1.1 1 1.4 1 .4 0 .7-.1.9-.2.1-.7.4-1.4 1-1.8-2.3-.5-4-1.8-4-4 0-1.1.5-2.2 1.2-3-.1-.2-.2-.7-.2-1.4 0-.4 0-.9.2-1.3 0-.2.2-.3.3-.3h.1c.5.1 1.5.4 2.4 1.3.6-.2 1.3-.3 2-.3s1.4.1 2 .3c.9-.9 2-1.2 2.5-1.3h.1c.2 0 .3.1.4.3v1.3c0 .8-.1 1.2-.2 1.4.7.8 1.2 1.8 1.2 3 0 2.2-1.7 3.5-4 4 .6.5 1 1.4 1 2.3v2.6c0 .3.3.6.7.5 3.7-1.5 6.3-5.1 6.3-9.3 0-6-5.1-10.7-11.1-10"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://gitlab.com/{{include.gitlab}}" class="p-4 inline-block hover:bg-slate-200" target="_blank">
+                    <svg class="h-4" fill="currentColor" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg"><path d="m23.95 13.59-1.34-4.14-2.66-8.19a.45.45 0 0 0-.87 0l-2.66 8.19H7.58L4.92 1.26c-.14-.42-.74-.42-.87 0L1.39 9.45.04 13.59c-.12.37.02.79.34 1.02L12 23.05l11.63-8.44a.92.92 0 0 0 .32-1.02"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://t.me/{{include.telegram}}" class="p-4 inline-block hover:bg-slate-200" target="_blank">
+                    <svg class="h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M25 2a23 23 0 1 1 0 46 23 23 0 0 1 0-46m7.93 32.38c.43-1.3 2.4-14.24 2.65-16.79.08-.77-.17-1.28-.64-1.51-.58-.28-1.44-.14-2.43.22-1.36.49-18.78 7.88-19.78 8.3-.96.41-1.86.86-1.86 1.5 0 .45.27.7 1 .96.77.28 2.7.86 3.84 1.17 1.1.3 2.35.04 3.05-.4.74-.45 9.3-6.18 9.92-6.68.61-.5 1.1.14.6.64s-6.38 6.2-7.16 7c-.94.96-.27 1.95.36 2.35.72.45 5.9 3.93 6.69 4.49.78.56 1.57.8 2.3.8.72 0 1.1-.95 1.46-2.05"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://x.com/{{include.x}}" class="p-4 inline-block hover:bg-slate-200" target="_blank">
+                    <svg class="h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <div class="w-full md:w-9/12 mx-2 h-64">
+          <div class="bg-white p-3 shadow-sm rounded-sm">
+            <div class="flex items-center rtl:space-x-2 font-semibold text-gray-900 leading-8">
+                <span clas="text-green-500">
+                    <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </span>
+                <span>در حال توسعه...</span>
+            </div>
+            <div class="text-gray-700">
+                ...
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
