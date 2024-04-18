@@ -21,7 +21,7 @@ permalink: /events/
               </a>
             </h3>
             <div>
-              {{ event.event_date | to_jalali: "%A %d %B %Y" | to_persian_digit }}
+              {{ event.event_date | jdate: "%A %d %b %Y" | to_persian_digit }}
               ساعت
               {{ event.event_date | date: "%H:%M" | to_persian_digit }}
             </div>
@@ -43,7 +43,7 @@ permalink: /events/
               </a>
             </h3>
             <div>
-              {{ event.event_date | to_jalali: "%d %B %Y" | to_persian_digit }}
+              {{ event.event_date | jdate: "%d %b %Y" | to_persian_digit }}
               ساعت
               {{ event.event_date | date: "%H:%M" | to_persian_digit }}
             </div>

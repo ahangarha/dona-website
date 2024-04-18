@@ -12,7 +12,7 @@ gem 'base64', '~> 0.2.0'
 gem 'bigdecimal', '~> 3.1'
 gem 'csv', '~> 3.3'
 
-gem "jekyll-bidi", "~> 0.1.0"
-gem 'parsi-date', '~> 0.4.0'
+gem 'jekyll-bidi', '~> 0.1.0'
+gem 'jekyll-jalali', '~> 0.1.2'
 
 gem 'rubocop', '~> 1.63', group: :development

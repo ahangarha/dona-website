@@ -7,6 +7,7 @@ repo_url: "https://framagit.org/dona/website"
 
 plugins:
   - jekyll-bidi
+  - jekyll-jalali
 #   - "jekyll-postcss"
 
 collections:
