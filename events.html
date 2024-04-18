@@ -25,10 +25,14 @@ permalink: /events/
               ساعت
               {{ event.event_date | date: "%H:%M" | to_persian_digit }}
             </div>
+
+            {% if event.presenter %}
             <small>
               توسط:
               <strong>{{ event.presenter | join: '، ' }}</strong>
             </small>
+            {% endif %}
+
             {{ event.content | bidify }}
           </div>
         {% else %}
@@ -43,10 +47,13 @@ permalink: /events/
               ساعت
               {{ event.event_date | date: "%H:%M" | to_persian_digit }}
             </div>
+
+            {% if event.presenter %}
             <small>
               توسط:
               <strong>{{ event.presenter | join: '، ' }}</strong>
             </small>
+            {% endif %}
           </div>
         {% endif %}
       {% endfor %}

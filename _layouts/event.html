@@ -15,10 +15,12 @@ title: event.title
     {{ page.event_date | date: "%H:%M" | to_persian_digit }}
   </div>
 
+  {% if page.presenter %}
   <div>
     توسط:
     <strong>{{ page.presenter | join: '، ' }}</strong>
   </div>
+  {% endif %}
 
   {{ content | bidify }}
 </article>
