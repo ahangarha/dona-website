@@ -6,13 +6,15 @@ source 'https://rubygems.org'
 
 gem 'jekyll', '~> 4.3'
 
-gem 'jekyll-postcss', '~> 0.5.0'
-
 gem 'base64', '~> 0.2.0'
 gem 'bigdecimal', '~> 3.1'
 gem 'csv', '~> 3.3'
 
-gem 'jekyll-bidi', '~> 0.1.0'
-gem 'jekyll-jalali', '~> 0.1.2'
+group :jekyll_plugins do
+  gem 'jekyll-bidi', '~> 0.1.0'
+  gem 'jekyll-jalali', '~> 0.1.2'
+end
 
-gem 'rubocop', '~> 1.63', group: :development
+group :development do
+  gem 'rubocop', '~> 1.63'
+end
