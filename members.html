@@ -18,7 +18,7 @@ permalink: /members/
         {% if member.photo contains "https://" %}
             {% assign profile_picture = member.photo %}
         {% else %}
-            {% assign profile_picture = "/members/profile_pictures/" | append: {{member.photo}} %}
+            {% assign profile_picture = "/members/profile_pictures/" | append: member.photo %}
         {% endif%}
         <img class="rounded-full size-24 mx-auto" src="{{profile_picture}}" alt="تصویر {{page.fullName}}">
         {% endif %}

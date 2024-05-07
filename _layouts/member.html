@@ -11,7 +11,7 @@ title: member.title
             {% if page.photo contains "https://" %}
                 {% assign profile_picture = page.photo %}
             {% else %}
-                {% assign profile_picture = "/members/profile_pictures/" | append: {{page.photo}} %}
+                {% assign profile_picture = "/members/profile_pictures/" | append: page.photo %}
             {% endif%}
             <img class="rounded-full size-500 mx-auto" src="{{profile_picture}}" alt="تصویر {{page.fullName}}">
             {% endif %}
