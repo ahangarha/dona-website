@@ -1,0 +1,20 @@
+{% assign member_events = site.events | where_exp: "event", "event.key_people contains include.member.full_name" %}
+
+
+<ul class="flex flex-col-reverse">
+  {% for event in member_events %}
+    {% assign event_number = event.name | split:"." | first | to_persian_digit %}
+    <li class="flex items-center gap-2 group">
+      <a
+        href="{{ event.url }}"
+        class="py-2"
+      >{{ event_number }} - {{ event.title }}</a>
+      <span class="grow border-t border-dotted group-hover:border-slate-500"></span>
+      <span class="font-mono text-xs opacity-50 group-hover:opacity-100">
+        {{ event.event_date | jdate: "%Y/%n/%d" | to_persian_digit }}
+      </span>
+    </li>
+  {% else %}
+    <li>موردی یافت نشد</li>
+  {% endfor %}
+</ul>
