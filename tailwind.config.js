@@ -9,10 +9,11 @@ module.exports = {
   ],
   darkMode: false,
   theme: {
-    extend: {},
-    fontFamily: {
-      'sans': ['shabnam'],
-    }
+    extend: {
+      fontFamily: {
+        'sans': ['shabnam'],
+      }
+    },
   },
   variants: {},
   plugins: [

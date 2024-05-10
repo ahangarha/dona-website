@@ -20,12 +20,12 @@ permalink: /members/
         {% else %}
             {% assign profile_picture = "/members/profile_pictures/" | append: member.photo %}
         {% endif%}
-        <img class="rounded-full size-24 mx-auto" src="{{profile_picture}}" alt="تصویر {{page.fullName}}">
+        <img class="rounded-full size-24 mx-auto" src="{{profile_picture}}" alt="تصویر {{page.full_name}}">
         {% endif %}
 
         <div class="mt-2 sm:mt-4">
           <h3 class="font-medium text-black-800 dark:text-black-200">
-            {{member.fullName}}
+            {{member.full_name}}
           </h3>
           <p class="text-sm text-gray-600 dark:text-gray-400">
             {{member.skill}}

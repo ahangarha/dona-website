@@ -29,7 +29,7 @@ permalink: /events/
             {% if event.presenter %}
             <small>
               توسط:
-              <strong>{{ event.presenter | join: '، ' }}</strong>
+              <strong>{{ event.presenter | link_to_member_page | join: '، ' }}</strong>
             </small>
             {% endif %}
 
@@ -51,7 +51,7 @@ permalink: /events/
             {% if event.presenter %}
             <small>
               توسط:
-              <strong>{{ event.presenter | join: '، ' }}</strong>
+              <strong>{{ event.presenter | link_to_member_page | join: '، ' }}</strong>
             </small>
             {% endif %}
           </div>
