@@ -8,12 +8,16 @@ title: member.title
       <div class="w-full md:w-3/12 md:mx-2">
           <div class="bg-white p-4">
             {% if page.photo %}
-            {% if page.photo contains "https://" %}
-                {% assign profile_picture = page.photo %}
+                {% if page.photo contains "https://" %}
+                    {% assign profile_picture = page.photo %}
+                {% else %}
+                    {% assign profile_picture = "/members/profile_pictures/" | append: page.photo %}
+                {% endif%}
+                <img class="rounded-full size-60 mx-auto" src="{{profile_picture}}" alt="تصویر {{page.full_name}}">
             {% else %}
-                {% assign profile_picture = "/members/profile_pictures/" | append: page.photo %}
-            {% endif%}
-            <img class="rounded-full size-500 mx-auto" src="{{profile_picture}}" alt="تصویر {{page.full_name}}">
+                <div class="rounded-full size-60 mx-auto bg-gray-200 grid place-content-center text-gray-400 text-xs select-none">
+                    بدون عکس
+                </div>
             {% endif %}
 
             <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1">{{page.full_name}}</h1>

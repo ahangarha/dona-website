@@ -7,7 +7,7 @@ permalink: /members/
 <div class="max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
   <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
     <h1 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-black">اعضای دونا</h1>
-    <p class="mt-1 text-gray-600 dark:text-gray-400">افراد علاقمند به نرم‌افزار آزاد</p>
+    <p class="mt-1 text-gray-600 dark:text-gray-400">این افراد در برگزاری جلسات دونا نقش داشته‌اند</p>
   </div>
   {% if site.members.size > 0 %}
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12">
@@ -15,12 +15,16 @@ permalink: /members/
     <a href="{{ member.url }}" class="no-underline font-bold">
       <div class="text-center">
         {% if member.photo %}
-        {% if member.photo contains "https://" %}
-            {% assign profile_picture = member.photo %}
+          {% if member.photo contains "https://" %}
+              {% assign profile_picture = member.photo %}
+          {% else %}
+              {% assign profile_picture = "/members/profile_pictures/" | append: member.photo %}
+          {% endif%}
+          <img class="rounded-full size-24 mx-auto" src="{{profile_picture}}" alt="تصویر {{page.full_name}}">
         {% else %}
-            {% assign profile_picture = "/members/profile_pictures/" | append: member.photo %}
-        {% endif%}
-        <img class="rounded-full size-24 mx-auto" src="{{profile_picture}}" alt="تصویر {{page.full_name}}">
+        <div class="rounded-full size-24 mx-auto bg-gray-200 grid place-content-center text-gray-400 text-xs select-none">
+          بدون عکس
+        </div>
         {% endif %}
 
         <div class="mt-2 sm:mt-4">
