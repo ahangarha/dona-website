@@ -13,8 +13,8 @@ permalink: /events/
       {% for event in events %}
         {% assign event_number = event.name | split:"." | first | to_persian_digit %}
         
-        {% if event.featured == true %}
-          <div class="border-amber-400 border border-s-2 border-b-4 p-4 mx-auto mb-4 bg-white rounded-lg prose shadow">
+        {% if event.status == 'featured' %}
+          <div class="relative border-amber-400 border border-s-2 border-b-4 p-4 mx-auto mb-4 bg-white rounded-lg prose shadow">
             <h3>
               <a href="{{ event.url }}" class="no-underline font-bold">
                 {{ event_number }} - {{ event.title }}
@@ -34,9 +34,11 @@ permalink: /events/
             {% endif %}
 
             {{ event.content | bidify }}
+
+            <span class="absolute -top-3 end-4 text-xs bg-white px-2 py-1 border border-amber-400 rounded-lg">نشست جاری</span>
           </div>
         {% else %}
-          <div class="border p-4 mx-auto mb-4 bg-white rounded-lg prose shadow">
+          <div class="relative border p-4 mx-auto mb-4 bg-white rounded-lg prose shadow">
             <h3>
               <a href="{{ event.url }}" class="no-underline font-bold">
                 {{ event_number }} - {{ event.title }}
@@ -49,10 +51,14 @@ permalink: /events/
             </div>
 
             {% if event.presenter %}
-            <small>
-              توسط:
-              <strong>{{ event.presenter | link_to_member_page | join: '، ' }}</strong>
-            </small>
+              <small>
+                توسط:
+                <strong>{{ event.presenter | link_to_member_page | join: '، ' }}</strong>
+              </small>
+
+              {% if event.status == 'future' %}
+                <span class="absolute -top-3 end-4 text-xs bg-white px-2 py-1 border rounded-lg">نشست آتی</span>
+              {% endif %}
             {% endif %}
           </div>
         {% endif %}
