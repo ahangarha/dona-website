@@ -12,6 +12,6 @@
     "live": "bundle exec jekyll serve -l",
     "tailwind-watch": "npx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main.css --watch",
     "tailwind": "npx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main.css",
-    "prod": "npx tailwindcss --minify -i ./assets/css/main.scss -o ./assets/css/main.css && JEKYLL_ENV=production bundle exec jekyll build -d public/"
+    "prod": "npx tailwindcss --minify -i ./assets/css/main.scss -o ./assets/css/main.css && JEKYLL_ENV=production bundle exec jekyll build -d public/ && mv calendar.ics public/"
   }
 }

@@ -9,6 +9,8 @@ gem 'jekyll', '~> 4.3'
 gem 'base64', '~> 0.2.0'
 gem 'bigdecimal', '~> 3.1'
 gem 'csv', '~> 3.3'
+gem 'icalendar', '~> 2.10'
+gem 'tzinfo', '~> 2.0'
 
 group :jekyll_plugins do
   gem 'jekyll-bidi', '~> 0.1.0'
