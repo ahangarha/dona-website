@@ -4,8 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="shortcut icon" href="{{ '/assets/img/dona-favicon-48.ico' | relative_url }}" type="image/x-icon">
+    <link rel="me" href="https://khiar.net/@do_na">
     <title>{{ site.title }} | {{ page.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+    <!-- Using turbo for smooth navigations between pages -->
+    <script src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@7.2.4/dist/turbo.es2017-umd.js"></script>
   </head>
   <body class="flex flex-col min-h-screen bg-slate-100" dir="rtl">
     {% include header.html %}
