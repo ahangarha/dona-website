@@ -10,7 +10,7 @@ permalink: /members/
     <p class="mt-1 text-gray-600 dark:text-gray-400">این افراد در برگزاری جلسات دونا نقش داشته‌اند</p>
   </div>
   {% if site.members.size > 0 %}
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12">
+  <div class="flex flex-wrap justify-center gap-8 md:gap-12">
     {% for member in site.members %}
     <a href="{{ member.url }}" class="no-underline font-bold">
       <div class="text-center">
