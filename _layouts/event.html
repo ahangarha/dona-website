@@ -9,14 +9,16 @@ title: event.title
   <h4>نشست {{ event_number }}</h4>
   <h1>{{ page.title }}</h1>
 
-  <div>
+  <div class="flex gap-2">
+    {% icon calendar class="h-6" %}
     {{ page.event_date | jdate: "%A %d %b %Y" | to_persian_digit }}
     ساعت
     {{ page.event_date | date: "%H:%M" | to_persian_digit }}
   </div>
 
   {% if page.presenter %}
-  <div>
+  <div class="flex gap-2">
+    {% icon user class="h-6" %}
     توسط:
     <em>{{ page.presenter | linkify_names | join: '، ' }}</em>
   </div>

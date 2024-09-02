@@ -10,9 +10,7 @@ permalink: /events/
   </h1>
   <p class="text-center my-8">
     <a href="/calendar.ics" target="_blank" rel="noopener noreferrer">
-      <svg class="w-4 h-4 inline-block" data-slot="icon" aria-hidden="true" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" stroke-linecap="round" stroke-linejoin="round"></path>
-      </svg>
+      {% icon calendar class="w-4 h-4 inline-block" %}
       تقویم
     </a>
   </p>
@@ -30,17 +28,19 @@ permalink: /events/
                 {{ event_number }} - {{ event.title }}
               </a>
             </h3>
-            <div>
+            <div class="flex gap-2">
+              {% icon calendar class="h-6" %}
               {{ event.event_date | jdate: "%A %d %b %Y" | to_persian_digit }}
               ساعت
               {{ event.event_date | date: "%H:%M" | to_persian_digit }}
             </div>
 
             {% if event.presenter %}
-            <small>
+            <div class="flex gap-2">
+              {% icon user class="h-6" %}
               توسط:
               <em>{{ event.presenter | linkify_names | join: '، ' }}</em>
-            </small>
+            </div>
             {% endif %}
 
             {{ event.content | bidify }}
@@ -54,17 +54,19 @@ permalink: /events/
                 {{ event_number }} - {{ event.title }}
               </a>
             </h3>
-            <div>
+            <div class="flex gap-2 text-sm">
+              {% icon calendar class="h-5" %}
               {{ event.event_date | jdate: "%d %b %Y" | to_persian_digit }}
               ساعت
               {{ event.event_date | date: "%H:%M" | to_persian_digit }}
             </div>
 
             {% if event.presenter %}
-              <small>
+              <div  class="flex gap-2 text-sm">
+                {% icon user class="h-5" %}
                 توسط:
                 <em>{{ event.presenter | linkify_names | join: '، ' }}</em>
-              </small>
+              </div>
 
               {% if event.status == 'future' %}
                 <span class="absolute -top-3 end-4 text-xs bg-white px-2 py-1 border rounded-lg">نشست آتی</span>
