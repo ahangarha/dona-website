@@ -16,6 +16,8 @@ title: event.title
     {{ page.event_date | date: "%H:%M" | to_persian_digit }}
   </div>
 
+  {% include event_location.html location=page.location %}
+
   {% if page.presenter %}
   <div class="flex gap-2">
     {% icon user class="h-6" %}

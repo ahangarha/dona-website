@@ -1,0 +1,21 @@
+{% if include.location %}
+<div class="flex gap-2">
+  {% icon location class="w-6 h-6 shrink-0" %}
+  <div class="flex-flex-wrap">
+    {% if include.location.link %}
+      <a href="{{include.location.link}}" target="_blank" rel="noopener noreferrer">
+        {{ include.location.text }}
+      </a>
+    {% else %}
+      {{ include.location.text }}
+    {% endif %}
+
+    {% if include.location.geo %}
+    |
+    <a href={% osm_link include.location.geo %} target="_blank" rel="noopener noreferrer">osm</a>
+    |
+    <a href={% geo_link include.location.geo %} target="_blank" rel="noopener noreferrer">geo</a>
+    {% endif %}
+  </div>
+</div>
+{% endif %}

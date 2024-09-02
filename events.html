@@ -23,25 +23,10 @@ permalink: /events/
         
         {% if event.status == 'featured' %}
           <div class="relative border-amber-400 border border-s-2 border-b-4 p-4 mx-auto mb-4 bg-white rounded-lg prose shadow">
-            <h3>
-              <a href="{{ event.url }}" class="no-underline font-bold">
-                {{ event_number }} - {{ event.title }}
-              </a>
-            </h3>
-            <div class="flex gap-2">
-              {% icon calendar class="h-6" %}
-              {{ event.event_date | jdate: "%A %d %b %Y" | to_persian_digit }}
-              ساعت
-              {{ event.event_date | date: "%H:%M" | to_persian_digit }}
-            </div>
-
-            {% if event.presenter %}
-            <div class="flex gap-2">
-              {% icon user class="h-6" %}
-              توسط:
-              <em>{{ event.presenter | linkify_names | join: '، ' }}</em>
-            </div>
-            {% endif %}
+            {% include event_title.html event_number=event_number title=event.title url=event.url %}
+            {% include event_date.html event_date=event.event_date format="long" %}
+            {% include event_location.html location=event.location %}
+            {% include event_presenter.html presenter=event.presenter %}
 
             {{ event.content | bidify }}
 
@@ -49,28 +34,16 @@ permalink: /events/
           </div>
         {% else %}
           <div class="relative border p-4 mx-auto mb-4 bg-white rounded-lg prose shadow">
-            <h3>
-              <a href="{{ event.url }}" class="no-underline font-bold">
-                {{ event_number }} - {{ event.title }}
-              </a>
-            </h3>
-            <div class="flex gap-2 text-sm">
-              {% icon calendar class="h-5" %}
-              {{ event.event_date | jdate: "%d %b %Y" | to_persian_digit }}
-              ساعت
-              {{ event.event_date | date: "%H:%M" | to_persian_digit }}
+            {% include event_title.html event_number=event_number title=event.title url=event.url %}
+
+            <div class="scale-90">
+              {% include event_date.html event_date=event.event_date format="long" %}
+              {% include event_location.html location=event.location %}
+              {% include event_presenter.html presenter=event.presenter %}
             </div>
 
-            {% if event.presenter %}
-              <div  class="flex gap-2 text-sm">
-                {% icon user class="h-5" %}
-                توسط:
-                <em>{{ event.presenter | linkify_names | join: '، ' }}</em>
-              </div>
-
-              {% if event.status == 'future' %}
-                <span class="absolute -top-3 end-4 text-xs bg-white px-2 py-1 border rounded-lg">نشست آتی</span>
-              {% endif %}
+            {% if event.status == 'future' %}
+              <span class="absolute -top-3 end-4 text-xs bg-white px-2 py-1 border rounded-lg">نشست آتی</span>
             {% endif %}
           </div>
         {% endif %}

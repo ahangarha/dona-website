@@ -1,0 +1,7 @@
+{% if event.presenter %}
+<div class="flex gap-2">
+  {% icon user class="w-6 h-6 shrink-0" %}
+  توسط:
+  <em>{{ event.presenter | linkify_names | join: '، ' }}</em>
+</div>
+{% endif %}

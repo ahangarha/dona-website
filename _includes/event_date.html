@@ -1,0 +1,11 @@
+<div class="flex gap-2">
+  {% icon calendar class="w-6 h-6 shrink-0" %}
+
+  {% if include.format == "long" %}
+    {{ event.event_date | jdate: "%A %d %b %Y" | to_persian_digit }}
+  {% else %}
+    {{ include.event_date | jdate: "%d %b %Y" | to_persian_digit }}
+  {% endif %}
+  ساعت
+  {{ include.event_date | date: "%H:%M" | to_persian_digit }}
+</div>
