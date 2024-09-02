@@ -7,7 +7,7 @@ module Jekyll
     #
     # Generate ancher link to given member name if their page exist
     #
-    # @param name [String] the full_name of the memeber
+    # @param name [String] the full_name of the member
     # @param html_attributes [String] optional html attributes
     #
     # @return [String] the ancher link to given member name if their page exist, otherwise the given name
@@ -25,6 +25,22 @@ module Jekyll
           #{name}
         </a>
       HTML
+    end
+
+    #
+    # Generate ancher link to given member name if their page exist
+    #
+    # @param name [String|Array<String>] the full_name of the member or members
+    # @param html_attributes [String] optional html attributes
+    #
+    # @return [String|Array<String>] the ancher link to given member name if their page exist, otherwise the given name
+    #
+    def linkify_names(names, html_attributes = '')
+      return link_to_member_page(names, html_attributes) unless names.is_a? Array
+
+      names.map do |name|
+        link_to_member_page(name, html_attributes)
+      end
     end
   end
 end
