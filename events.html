@@ -8,7 +8,7 @@ permalink: /events/
   <h1 class="text-center text-4xl my-8">نشست‌های دونا</h1>
 
   {% if site.events.size > 0 %}
-    {% assign events = site.events | reverse %}
+    {% assign events = site.events | sort: 'event_date' | reverse %}
     <div>
       {% for event in events %}
         {% assign event_number = event.name | split:"." | first | to_persian_digit %}

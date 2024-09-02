@@ -28,7 +28,9 @@ module Jekyll
       tzid = 'Asia/Tehran'
       cal.timezone.tzid = tzid
 
-      site.collections['events'].docs.each do |entry|
+      events = site.collections['events'].docs.sort_by { |e| e['event_date'] }
+
+      events.each do |entry|
         cal.add_event(generate_event_from(entry, tzid: tzid))
       end
 
