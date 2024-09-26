@@ -1,4 +1,4 @@
-{% assign member_events = site.events | where_exp: "event", "event.key_people contains include.member.full_name" %}
+{% assign member_events = site.events | where_exp: "event", "event.key_people contains include.member.full_name" | sort: 'event_date' | reverse %}
 
 
 <ul class="flex flex-col-reverse">
