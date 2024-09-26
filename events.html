@@ -22,7 +22,7 @@ permalink: /events/
         {% assign event_number = event.name | split:"." | first | to_persian_digit %}
         
         {% if event.status == 'featured' %}
-          <div class="relative border-amber-400 border border-s-2 border-b-4 p-4 mx-auto mb-4 bg-white rounded-lg prose shadow">
+          <div class="relative border-amber-400 border border-s-2 border-b-4 p-4 mx-auto mb-4 bg-white dark:bg-slate-800 rounded-lg prose dark:prose-invert shadow">
             {% include event_title.html event_number=event_number title=event.title url=event.url %}
             {% include event_date.html event_date=event.event_date format="long" %}
             {% include event_location.html location=event.location %}
@@ -30,10 +30,10 @@ permalink: /events/
 
             {{ event.content | bidify }}
 
-            <span class="absolute -top-3 end-4 text-xs bg-white px-2 py-1 border border-amber-400 rounded-lg">نشست جاری</span>
+            <span class="absolute -top-3 end-4 text-xs bg-white dark:bg-slate-800 px-2 py-1 border border-amber-400 rounded-lg">نشست جاری</span>
           </div>
         {% else %}
-          <div class="relative border p-4 mx-auto mb-4 bg-white rounded-lg prose shadow">
+          <div class="relative border dark:border-slate-700 p-4 mx-auto mb-4 bg-white dark:bg-slate-800  rounded-lg prose dark:prose-invert shadow">
             {% include event_title.html event_number=event_number title=event.title url=event.url %}
 
             <div class="scale-90">
@@ -43,7 +43,7 @@ permalink: /events/
             </div>
 
             {% if event.status == 'future' %}
-              <span class="absolute -top-3 end-4 text-xs bg-white px-2 py-1 border rounded-lg">نشست آتی</span>
+              <span class="absolute -top-3 end-4 text-xs bg-white dark:bg-slate-800 px-2 py-1 border dark:border-slate-700 rounded-lg">نشست آتی</span>
             {% endif %}
           </div>
         {% endif %}

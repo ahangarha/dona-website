@@ -1,9 +1,9 @@
 
 {% assign links = include.links | parse_json %}
 
-<div class="flex flex-wrap gap-1 border-red-500 my-4 justify-center">
+<div class="flex flex-wrap gap-1 my-4 justify-center">
   {% for link in links %}
-  <a href="{{ link[1] }}" class="p-2 inline-block hover:bg-slate-200" target="_blank">
+  <a href="{{ link[1] }}" class="p-2 inline-block hover:bg-slate-200 dark:hover:bg-slate-900" target="_blank">
     {% assign icon_name = link[0] %}
     {% icon icon_name class="h-4" %}
   </a>

@@ -6,7 +6,7 @@ title: member.title
 <div class="container mx-auto my-5 p-5">
   <div class="flex flex-col md:flex-row gap-4">
       <div class="w-full md:w-3/12 md:mx-2">
-          <div class="bg-white p-4">
+          <div class="bg-slate-50 dark:bg-slate-800 p-4 shadow-lg">
             {% if page.photo %}
                 {% if page.photo contains "https://" %}
                     {% assign profile_picture = page.photo %}
@@ -15,14 +15,14 @@ title: member.title
                 {% endif%}
                 <img class="rounded-full size-60 mx-auto" src="{{profile_picture}}" alt="تصویر {{page.full_name}}">
             {% else %}
-                <div class="rounded-full size-60 mx-auto bg-gray-200 grid place-content-center text-gray-400 text-xs select-none">
+                <div class="rounded-full size-60 mx-auto bg-slate-200 grid place-content-center text-slate-400 text-xs select-none">
                     بدون عکس
                 </div>
             {% endif %}
 
-            <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1">{{page.full_name}}</h1>
-            <h3 class="text-gray-600 font-lg text-semibold text-center leading-6">{{page.profession}}</h3>
-            <div class="text-sm text-gray-500 hover:text-gray-600 leading-6 prose">{{page.content}}</div>
+            <h1 class="text-slate-800 dark:text-slate-100 font-bold text-xl text-center leading-8 my-1">{{page.full_name}}</h1>
+            <h3 class="text-slate-800 dark:text-slate-300 font-lg text-semibold text-center leading-6">{{page.profession}}</h3>
+            <div class="text-sm text-slate-500 dark:text-slate-400 leading-6 prose">{{page.content}}</div>
 
             {% include skill_set.html skills=page.skills %}
 
@@ -31,11 +31,11 @@ title: member.title
           </div>
       </div>
       <div class="w-full md:w-9/12 h-64">
-          <div class="bg-white p-4 shadow-sm rounded-sm">
-            <h3 class="font-semibold text-gray-900 leading-8">
+          <div class="bg-slate-50 dark:bg-slate-800 p-4 rounded-sm shadow-lg">
+            <h3 class="font-semibold text-slate-900 dark:text-slate-100 leading-8">
                 فعالیت‌ها:
             </h3>
-            <div class="text-gray-700">
+            <div class="text-slate-700 dark:text-slate-300">
                 {% include member_activities.html member=page %}
             </div>
         </div>
