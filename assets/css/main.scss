@@ -19,3 +19,7 @@
     src: url(/assets/fonts/Shabnam-Bold.woff) format('woff');
   }
 }
+
+.active-menu {
+  @apply relative bg-indigo-950/25 shadow-inner;
+}
