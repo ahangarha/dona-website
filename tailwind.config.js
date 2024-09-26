@@ -7,7 +7,6 @@ module.exports = {
     './**/*.md',
     './*.html',
   ],
-  darkMode: false,
   theme: {
     extend: {
       fontFamily: {
