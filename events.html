@@ -3,6 +3,11 @@ layout: index
 title: نشست‌ها
 permalink: /events/
 ---
+{% assign events = site.events | sort: 'event_date' | reverse %}
+
+{% assign future_events = events | where: "status", "future" %}
+{% assign featured_events = events | where: "status", "featured" %}
+{% assign other_events = events | where: "status", nil %}
 
 <div class="py-16 px-4 container mx-auto">
   <h1 class="text-center text-4xl my-8">
@@ -15,41 +20,63 @@ permalink: /events/
     </a>
   </p>
 
-  {% if site.events.size > 0 %}
-    {% assign events = site.events | sort: 'event_date' | reverse %}
-    <div>
-      {% for event in events %}
+  <div>
+
+    {% if events.size == 0 %}
+      <p class="text-center">نشستی موجود نیست</p>
+    {% endif %}
+
+    {% if future_events.size > 0 %}
+      {% for event in future_events %}
         {% assign event_number = event.name | split:"." | first | to_persian_digit %}
-        
-        {% if event.status == 'featured' %}
-          <div class="relative border-amber-400 border border-s-2 border-b-4 p-4 mx-auto mb-4 bg-white dark:bg-slate-800 rounded-lg prose dark:prose-invert shadow">
-            {% include event_title.html event_number=event_number title=event.title url=event.url %}
+
+        <div class="relative border dark:border-slate-700 p-4 mx-auto mb-4 bg-white dark:bg-slate-800 rounded-lg prose dark:prose-invert shadow opacity-65">
+          {% include event_title.html event_number=event_number title=event.title url=event.url %}
+
+          <div class="scale-90">
             {% include event_date.html event_date=event.event_date format="long" %}
-            {% include event_location.html location=event.location %}
             {% include event_presenter.html presenter=event.presenter %}
-
-            {{ event.content | bidify }}
-
-            <span class="absolute -top-3 end-4 text-xs bg-white dark:bg-slate-800 px-2 py-1 border border-amber-400 rounded-lg">نشست جاری</span>
           </div>
-        {% else %}
-          <div class="relative border dark:border-slate-700 p-4 mx-auto mb-4 bg-white dark:bg-slate-800  rounded-lg prose dark:prose-invert shadow">
+
+          <span class="absolute -top-3 end-4 text-xs bg-white dark:bg-slate-800 px-2 py-1 border dark:border-slate-700 rounded-lg">نشست آتی</span>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    {% if featured_events.size > 0 %}
+      {% for event in featured_events %}
+        {% assign event_number = event.name | split:"." | first | to_persian_digit %}
+
+        <div class="relative border-amber-400 border border-s-2 border-b-4 p-4 mx-auto mb-4 bg-white dark:bg-slate-800 rounded-lg prose dark:prose-invert shadow">
+          {% include event_title.html event_number=event_number title=event.title url=event.url %}
+          {% include event_date.html event_date=event.event_date format="long" %}
+          {% include event_location.html location=event.location %}
+          {% include event_presenter.html presenter=event.presenter %}
+
+          {{ event.content | bidify }}
+
+          <span class="absolute -top-3 end-4 text-xs bg-white dark:bg-slate-800 px-2 py-1 border border-amber-400 rounded-lg">نشست جاری</span>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    {% if other_events.size > 0 %}
+      <h3 class="mt-16 mb-8 text-center text-xl font-bold">رویدادهای پیشین</h3>
+
+      <div class="flex flex-col gap-4 lg:grid lg:grid-cols-2 max-w-[120ch] mx-auto">
+        {% for event in other_events %}
+          {% assign event_number = event.name | split:"." | first | to_persian_digit %}
+
+          <div class="relative border dark:border-slate-700 p-4 mx-auto bg-white dark:bg-slate-800 rounded-lg w-full prose dark:prose-invert shadow">
             {% include event_title.html event_number=event_number title=event.title url=event.url %}
 
             <div class="scale-90">
               {% include event_date.html event_date=event.event_date format="long" %}
-              {% include event_location.html location=event.location %}
               {% include event_presenter.html presenter=event.presenter %}
             </div>
-
-            {% if event.status == 'future' %}
-              <span class="absolute -top-3 end-4 text-xs bg-white dark:bg-slate-800 px-2 py-1 border dark:border-slate-700 rounded-lg">نشست آتی</span>
-            {% endif %}
           </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  {% else %}
-    <p class="text-center">نشستی موجود نیست</p>
-  {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
 </div>
